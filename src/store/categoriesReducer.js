@@ -1,9 +1,6 @@
 const initState = {
-    allCategories: [
-        { name: 'electronics', displayName: 'Electronics' },
-        { name: 'food', displayName: '' },
-    ],
-    currentCategory: 'food',
+    allCategories: [],
+    currentCategory: '',
 };
 
 const reducer = (state = initState, action) => {
@@ -14,6 +11,9 @@ const reducer = (state = initState, action) => {
         case 'CONSOLE_LOG':
             console.log('categories');
             break;
+        case 'GET_CATEGORIES':
+                newState.allCategories = [...action.payload];
+                break;
         case 'CHANGE_CATEGORY':
             newState.currentCategory = action.payload;
             break;

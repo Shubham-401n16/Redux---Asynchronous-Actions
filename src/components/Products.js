@@ -66,7 +66,10 @@ const useStyles = makeStyles({
                     }} 
                     disabled={props.products[i].stock < 1 ? true : false}
                     >Add To Cart</Button>
-                    <Button size="small" color="primary">
+                <Button size="small" 
+                    color="primary"
+                    onClick={(e) => {props.getOneProduct(props.products[i]._id)}} 
+                >
                         View Details
                     </Button>
                 </CardActions>

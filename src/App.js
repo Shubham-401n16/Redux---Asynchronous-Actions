@@ -2,9 +2,6 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
 import './styles/styles.scss';
-import { Grid } from '@material-ui/core';
-
-
 import Products from './components/Products';
 import Categories from './components/Categories';
 import Header from './components/Header';
