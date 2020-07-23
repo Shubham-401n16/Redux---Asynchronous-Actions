@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Grid, Typography, Button, Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
 import { Delete } from '@material-ui/icons';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import * as actions from '../store/storeAction';
+
 
 
 function SimpleCart(props) {
@@ -52,4 +54,8 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(SimpleCart)
+const mapDispatchToProps = (dispatch, getState) => ({
+  removeFromCart: (data) => dispatch( actions.removeFromCart(data) ),
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(SimpleCart)

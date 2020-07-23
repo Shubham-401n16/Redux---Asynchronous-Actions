@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Button, Drawer } from '@material-ui/core';
+import * as actions from '../store/storeAction';
 
 function Categories(props) {
     let categoriesHTML = [];
@@ -38,4 +39,9 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(Categories);
+const mapDispatchToProps = (dispatch, getState) => ({
+    getCategories: (data) => dispatch( actions.getCategories(data) ),
+    changeCategory: (payload) => dispatch( actions.changeCategory(payload) ),
+  })
+
+  export default connect(mapStateToProps, mapDispatchToProps)(Categories);

@@ -10,6 +10,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import * as actions from '../store/storeAction';
 
 const useStyles = makeStyles({
     root: {
@@ -98,4 +99,9 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(Products);
+const mapDispatchToProps = (dispatch, getState) => ({
+    getProducts: (data) => dispatch( actions.getProducts(data) ),
+    addToCart: (data) => dispatch( actions.addToCart(data) ),
+  })
+
+export default connect(mapStateToProps,mapDispatchToProps)(Products);
