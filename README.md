@@ -8,7 +8,7 @@
 * [Code Sandbox]()
 * [Github Actions]
 * [PR](https://github.com/Shubham-401n16/Redux---Asynchronous-Actions/pull/1)
-* [Netlify App]()
+* [Netlify App](https://redux-asynchronous-actions-shoppingcart.netlify.app)
 
 #### Documentation
 * [api docs](http://xyz.com/api-docs) (API servers)
